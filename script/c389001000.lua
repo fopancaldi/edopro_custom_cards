@@ -49,10 +49,6 @@ function s.search_filter(c, tp)
   return c:IsCode(CARD_DRAGONIC_DIAGRAM) and (c:IsAbleToHand() or (c:GetActivateEffect():IsActivatable(tp, true, true)))
 end
 
-function s.desctructable_filter(c)
-  return c:IsDestructable()
-end
-
 function s.search_target(_, tp, _, _, _, _, _, _, chk)
   if chk == 0 then
     return Duel.IsExistingMatchingCard(s.search_filter, tp, LOCATION_DECK, 0, 1, nil, tp)
@@ -60,11 +56,15 @@ function s.search_target(_, tp, _, _, _, _, _, _, chk)
   Duel.SetOperationInfo(0, CATEGORY_TOHAND, nil, 1, tp, LOCATION_DECK)
 end
 
+function s.destructable_filter(c)
+  return c:IsDestructable()
+end
+
 function s.search_operation(e, tp, eg, ep, ev, re, r, rp)
   local tc = Duel.GetFirstMatchingCard(s.search_filter, tp, LOCATION_DECK, 0, nil)
-  aux.ToHandOrElse(tc, tp, function(c)
+  aux.ToHandOrElse(tc, tp, function(_)
     return tc:GetActivateEffect():IsActivatable(tp, true, true)
-  end, function(c)
+  end, function(_)
     Duel.ActivateFieldSpell(tc, e, tp, eg, ep, ev, re, r, rp)
   end, aux.Stringid(id, 0))
 
