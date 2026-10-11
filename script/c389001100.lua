@@ -1,9 +1,9 @@
---Magical Musket - Steady Hands
+-- Magical Musket - Steady Hands
 
 local s, id = GetID()
 
 function s.initial_effect(c)
-  --Activate 1 of 2 effects
+  -- Activate
   local e1 = Effect.CreateEffect(c)
   e1:SetType(EFFECT_TYPE_ACTIVATE)
   e1:SetCode(EVENT_FREE_CHAIN)

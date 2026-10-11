@@ -1,10 +1,10 @@
---Dreiath III, the True Dracocavalry General
+-- Dreiath III, the True Dracocavalry General
 
 local s, id = GetID()
 Duel.LoadScript("fopancaldi_aux.lua")
 
 function s.initial_effect(c)
-  --Summon with s/t
+  -- Summon with s/t
   local e1 = Effect.CreateEffect(c)
   e1:SetType(EFFECT_TYPE_SINGLE)
   e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE + EFFECT_FLAG_UNCOPYABLE)
@@ -13,7 +13,7 @@ function s.initial_effect(c)
   e1:SetTarget(aux.TargetBoolFunction(Card.IsType, TYPE_CONTINUOUS))
   e1:SetValue(POS_FACEUP)
   c:RegisterEffect(e1)
-  --Opponent cannot target other cards you control with card effects
+  -- Opponent cannot target other cards you control with card effects
   local e2 = Effect.CreateEffect(c)
   e2:SetType(EFFECT_TYPE_FIELD)
   e2:SetCode(EFFECT_CANNOT_BE_EFFECT_TARGET)
@@ -22,7 +22,7 @@ function s.initial_effect(c)
   e2:SetTargetRange(LOCATION_ONFIELD, 0)
   e2:SetTarget(s.protection_target)
   c:RegisterEffect(e2)
-  --Search
+  -- Search
   local e3 = Effect.CreateEffect(c)
   e3:SetCategory(CATEGORY_DESTROY + CATEGORY_TOHAND + CATEGORY_SEARCH)
   e3:SetType(EFFECT_TYPE_QUICK_O)

@@ -1,9 +1,9 @@
---Foolish Burial
+-- Foolish Burial
 
 local s, id = GetID()
 
 function s.initial_effect(c)
-  --Send 1 monster to the GY
+  -- Activate
   local e1 = Effect.CreateEffect(c)
   e1:SetCategory(CATEGORY_REMOVE + CATEGORY_TOGRAVE)
   e1:SetType(EFFECT_TYPE_ACTIVATE)

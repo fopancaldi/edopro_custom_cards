@@ -1,8 +1,8 @@
---Draco Awakening
+-- Draco Awakening
 
 local s, id = GetID()
 function s.initial_effect(c)
-  --Search on activation
+  -- Search on activation
   local e1 = Effect.CreateEffect(c)
   e1:SetCategory(CATEGORY_TOHAND + CATEGORY_SEARCH)
   e1:SetType(EFFECT_TYPE_ACTIVATE)
@@ -12,7 +12,7 @@ function s.initial_effect(c)
   e1:SetTarget(s.search_target)
   e1:SetOperation(s.activate)
   c:RegisterEffect(e1)
-  --Tribute summon
+  -- Tribute summon
   local e2 = Effect.CreateEffect(c)
   e2:SetDescription(aux.Stringid(id, 1))
   e2:SetCategory(CATEGORY_SUMMON)
@@ -22,7 +22,7 @@ function s.initial_effect(c)
   e2:SetTarget(s.summon_target)
   e2:SetOperation(s.summon_operation)
   c:RegisterEffect(e2)
-  --Destroy 1 card on the field
+  -- Destroy 1 card on the field
   local e3 = Effect.CreateEffect(c)
   e3:SetDescription(aux.Stringid(id, 2))
   e3:SetCategory(CATEGORY_DESTROY)
