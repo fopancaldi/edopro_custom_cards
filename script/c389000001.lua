@@ -1,4 +1,5 @@
 --Pot of Acquisitiveness
+
 local s, id = GetID()
 
 function s.initial_effect(c)
@@ -28,7 +29,7 @@ function s.target(_, tp, _, _, _, _, _, _, chk, chkc)
   end
   if chk == 0 then
     return Duel.IsPlayerCanDraw(tp, 1)
-      and Duel.IsExistingTarget(s.target_filter, tp, LOCATION_REMOVED, LOCATION_REMOVED, 5, nil, tp)
+        and Duel.IsExistingTarget(s.target_filter, tp, LOCATION_REMOVED, LOCATION_REMOVED, 5, nil, tp)
   end
   Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_TODECK)
   local g = Duel.SelectTarget(tp, s.target_filter, tp, LOCATION_REMOVED, LOCATION_REMOVED, 5, 5, nil, tp)

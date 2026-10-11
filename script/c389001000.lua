@@ -1,4 +1,5 @@
 --Dreiath III, the True Dracocavalry General
+
 local s, id = GetID()
 Duel.LoadScript("fopancaldi_aux.lua")
 
