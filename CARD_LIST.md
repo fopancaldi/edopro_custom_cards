@@ -21,3 +21,8 @@
 ### 1100 - 1199: Magical Musket
 
 1100. Magical Musket - Steady Hands
+
+### 1200 - 1299: Kashtira
+
+1200. Kashtira Fenrir
+1201. Kashtira Ogre
