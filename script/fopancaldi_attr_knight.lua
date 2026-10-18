@@ -28,7 +28,7 @@ function MakeAttributeKnight(s, id, attr)
     return c:IsMonster() and c:IsAttribute(attr) and c:IsAbleToGrave()
   end
 
-  function s.send_target(e, tp, eg, ep, ev, re, r, rp, chk)
+  function s.send_target(_, tp, _, _, _, _, _, _, chk)
     if chk == 0 then return Duel.IsExistingMatchingCard(s.send_filter, tp, LOCATION_DECK, 0, 1, nil) end
     Duel.SetOperationInfo(0, CATEGORY_TOGRAVE, nil, 1, tp, LOCATION_DECK)
   end
@@ -37,7 +37,7 @@ function MakeAttributeKnight(s, id, attr)
     return c:IsLocation(LOCATION_EXTRA) and not c:IsAttribute(attr)
   end
 
-  function s.send_operation(e, tp, eg, ep, ev, re, r, rp)
+  function s.send_operation(e, tp, _, _, _, _, _, _)
     Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_TOGRAVE)
     local g = Duel.SelectMatchingCard(tp, s.send_filter, tp, LOCATION_DECK, 0, 1, 1, nil)
     if #g > 0 then
@@ -54,7 +54,7 @@ function MakeAttributeKnight(s, id, attr)
     aux.RegisterClientHint(e:GetHandler(), nil, tp, 1, 0, aux.Stringid(id, 1), nil)
   end
 
-  function s.place_condition(e, tp, eg, ep, ev, re, r, rp)
+  function s.place_condition(_, tp, _, _, _, _, _, _)
     return Duel.IsTurnPlayer(1 - tp)
   end
 
@@ -62,14 +62,14 @@ function MakeAttributeKnight(s, id, attr)
     return c:IsMonster() and c:IsAttribute(attr) and c:IsAbleToDeck()
   end
 
-  function s.place_target(e, tp, eg, ep, ev, re, r, rp, chk, chkc)
+  function s.place_target(_, tp, _, _, _, _, _, _, chk, chkc)
     if chkc then return chkc:IsLocation(LOCATION_GRAVE) end
     if chk == 0 then return Duel.IsExistingTarget(s.place_filter, tp, LOCATION_GRAVE, 0, 1, nil) end
     local g = Duel.SelectTarget(tp, s.place_filter, tp, LOCATION_GRAVE, 0, 1, 1, nil)
     Duel.SetOperationInfo(0, CATEGORY_TODECK, g, 1, 0, 0)
   end
 
-  function s.place_operation(e, tp, eg, ep, ev, re, r, rp)
+  function s.place_operation(e, _, _, _, _, _, _, _)
     local tg = Duel.GetChainInfo(0, CHAININFO_TARGET_CARDS)
     local sg = tg:Filter(Card.IsRelateToEffect, nil, e)
     Duel.SendtoDeck(sg, nil, SEQ_DECKTOP, REASON_EFFECT)
