@@ -1,6 +1,6 @@
 -- Dawn Knight
 
-local s,id=GetID()
+local s, id = GetID()
 
 Duel.LoadScript("fopancaldi_attr_knight.lua")
 
