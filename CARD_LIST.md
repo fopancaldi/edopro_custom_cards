@@ -11,6 +11,15 @@
 
 100. Foolish Burial
 
+### 950 - 999: Attribute support
+
+950: Dust Knight
+951: Altitude Knight
+952: Shore Knight
+953: Brushfire Knight
+954: Dawn Knight
+955: Armageddon Knight
+
 ## 1000 - ...: Archetypes
 
 ### 1000 - 1099: True Draco
