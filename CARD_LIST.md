@@ -22,10 +22,14 @@
 
 ## 1000 - ...: Archetypes
 
-### 1000 - 1099: True Draco
+### 1000 - 1024: True Draco
 
 1000. Dreiath III, the True Dracocavalry General
 1001. Draco Awakening
+
+### 1025 - 1049: Cyber Dragon
+
+1025. Proto-Cyber Dragon
 
 ### 1100 - 1199: Magical Musket
 
